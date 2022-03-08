@@ -29,7 +29,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getEmployee(Long id) {
-        return employeeDAO.findEmployeeById(id);
+        return employeeDAO.findEmployeeById(id).orElseThrow(() -> new EmployeeNotFoundException("There is no employee with this id: " + id + "in the system"));
     }
 
     @Override
