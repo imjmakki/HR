@@ -22,7 +22,7 @@ public class Employee implements Serializable {
     private String name;
     private String phone;
     private String email;
-    private String jonTitle;
+    private String jobTitle;
     private String imageUrl;
 
     @Column(nullable = false, updatable = false)
