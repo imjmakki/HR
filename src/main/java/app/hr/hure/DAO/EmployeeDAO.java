@@ -10,5 +10,5 @@ import java.util.Optional;
 public interface EmployeeDAO extends JpaRepository<Employee, Long> {
 
     void deleteEmployeeById(Long id);
-    Optional findEmployeeById(Long id);
+    Optional<Employee> findEmployeeById(Long id);
 }

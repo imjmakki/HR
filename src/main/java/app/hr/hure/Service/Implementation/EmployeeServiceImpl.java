@@ -3,6 +3,7 @@ package app.hr.hure.Service.Implementation;
 import app.hr.hure.DAO.EmployeeDAO;
 import app.hr.hure.Domain.Employee;
 import app.hr.hure.Service.EmployeeService;
+import app.hr.hure.Utility.Exception.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +30,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getEmployee(Long id) {
-        return employeeDAO.findEmployeeById(id).orElseThrow(() -> new EmployeeNotFoundException("There is no employee with this id: " + id + "in the system"));
+        return employeeDAO.findEmployeeById(id)
+                .orElseThrow(() -> new EmployeeNotFoundException("There is no employee with this id: " + id + "in the system"));
     }
 
     @Override
