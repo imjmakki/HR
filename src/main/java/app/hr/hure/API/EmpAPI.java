@@ -21,6 +21,12 @@ public class EmpAPI {
         this.employeeService = employeeService;
     }
 
+    @PostMapping("/add")
+    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+        Employee newEmployee = employeeService.addEmployee(employee);
+        return new ResponseEntity<>(newEmployee, CREATED);
+    }
+
     @GetMapping("/list")
     public ResponseEntity<List<Employee>> listEmployees () {
         List<Employee> employees = employeeService.allEmployees();
@@ -33,9 +39,15 @@ public class EmpAPI {
         return new ResponseEntity<>(employee, OK);
     }
 
-    @PostMapping("/add")
-    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
-        Employee newEmployee = employeeService.addEmployee(employee);
-        return new ResponseEntity<>(employee, CREATED);
+    @PutMapping("/edit")
+    public ResponseEntity<Employee> editEmployee(@RequestBody Employee employee) {
+        Employee editEmployee = employeeService.editEmployee(employee);
+        return new ResponseEntity<>(editEmployee, OK);
+    }
+
+    @DeleteMapping("/remove/{id}")
+    public ResponseEntity<?> removeEmployee(@PathVariable("id") Long id) {
+        employeeService.deleteEmployee(id);
+        return new ResponseEntity<>(OK);
     }
 }
