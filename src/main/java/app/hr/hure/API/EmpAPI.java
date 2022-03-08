@@ -4,10 +4,7 @@ import app.hr.hure.Domain.Employee;
 import app.hr.hure.Service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -34,5 +31,11 @@ public class EmpAPI {
     public ResponseEntity<Employee> getEmployee(@PathVariable("id") Long id) {
         Employee employee = employeeService.getEmployee(id);
         return new ResponseEntity<>(employee, OK);
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Employee> addEmployee(@RequestBody Employee employee) {
+        Employee newEmployee = employeeService.addEmployee(employee);
+        return new ResponseEntity<>(employee, CREATED);
     }
 }
