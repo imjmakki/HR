@@ -12,6 +12,7 @@ import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("employee")
+@CrossOrigin(origins = "*")
 public class EmpAPI {
 
     private EmployeeService employeeService;
