@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class EmployeeService {
+  private apiServerUrl = '';
 
   constructor(private http: HttpClient) { }
 
