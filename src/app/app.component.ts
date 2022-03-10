@@ -19,7 +19,7 @@ export class AppComponent {
         this.employees = response;
       },
       (error: HttpErrorResponse) => {
-
+          alert(error.message);
       }
     );
   }
