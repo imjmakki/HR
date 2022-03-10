@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Employee} from "./model/employee";
+import {EmployeeService} from "./service/employee.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular';
+  public employees: Employee[];
+
+  constructor(private employeeService: EmployeeService) {
+  }
 }
