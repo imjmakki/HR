@@ -10,6 +10,9 @@ import {EmployeeService} from "./service/employee.service";
 export class AppComponent {
   public employees: Employee[];
 
-  constructor(private employeeService: EmployeeService) {
+  constructor(private employeeService: EmployeeService) {}
+
+  public getEmployees(): void {
+
   }
 }
