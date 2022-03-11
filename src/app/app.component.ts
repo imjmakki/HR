@@ -31,5 +31,7 @@ export class AppComponent implements OnInit {
   public onOpenModel(employee: Employee, mode: string): void {
     const button = document.createElement('button');
     button.type = 'button';
+    button.style.display = 'none';
+    button.setAttribute('data-toggle', 'model');
   }
 }
