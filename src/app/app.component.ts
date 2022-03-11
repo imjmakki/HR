@@ -43,5 +43,8 @@ export class AppComponent implements OnInit {
     if (mode === 'delete') {
       button.setAttribute('data-target', '#deleteEmployeeModal');
     }
+    // @ts-ignore
+    container.appendChild(button);
+    button.click();
   }
 }
