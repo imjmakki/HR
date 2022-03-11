@@ -27,4 +27,8 @@ export class AppComponent implements OnInit {
       }
     );
   }
+
+  public onOpenModel(employee: Employee, mode: string): void {
+
+  }
 }
